@@ -25,6 +25,9 @@ properties:
   skip-magic:
     type: boolean
     description: Match the previous keycode instead of the last; repeat it on no match.
+  input-key:
+    type: int
+    default: 0
 
 child-binding:
   description: "An adaptive key condition"
@@ -54,3 +57,10 @@ child-binding:
       type: boolean
     strict-modifiers:
       type: boolean
+    continue-swap:
+      type: boolean
+    continue-shift:
+      type: boolean
+    swap-key:
+      type: int
+      default: 0
