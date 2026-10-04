@@ -256,7 +256,8 @@ static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
     }
     if (!camel_case_boundary && !skip_triggers) {
         for (int i = 0; i < config->triggers_len; i++) {
-            if (trigger_is_true(&config->triggers[i], data, event.timestamp, config->skip_magic)) {
+            if (!(config->triggers[i].strict_modifiers && (mods & ~(MOD_LSFT | MOD_RSFT))) &&
+                trigger_is_true(&config->triggers[i], data, event.timestamp, config->skip_magic)) {
                 matched_trigger = &config->triggers[i];
                 match = true;
                 break;

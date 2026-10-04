@@ -1,0 +1,2 @@
+s/.*hid_listener_keycode_pressed: .*keycode \(0x06\|0x07\) .*/\1/p
+/Tried to unregister modifier/p
